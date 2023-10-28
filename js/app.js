@@ -66,6 +66,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   return [sumABC, productABC, sumString, productString];
 }
 
+//I needed the assistance from chatGPT and a TA to get through this one and have it explained to me.
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
@@ -99,6 +100,8 @@ function sumArray(sumArr) { //eslint-disable-line
   return [sumResult, resultString];
 }
 
+// Note:  I had to resort to ChatGPT to help me out with this one.
+
 // Here is the test for sumArray(); uncomment it to run it
 
 testSumArray(testArray);
@@ -117,11 +120,23 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  let productResult = 1;
 
+  // Calculate the product using the multiply function
+  for (let i = 0; i < multArr.length; i++) {
+    productResult = multiply(productResult, multArr[i])[0];
+  }
+
+  // Create the string following the specified format
+  let arrayString = multArr.join(',');
+  let resultString = `The numbers ${arrayString} have a product of ${productResult}.`;
+  return [productResult, resultString];
 }
 
+// I had to resort to ChatGPT to help me out with this one.  Virtually the same as problem #4 but had to change the productResult = 1.  I believe this is because you get 0 if you multipy a number by 0.
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
